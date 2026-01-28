@@ -15,21 +15,18 @@ class TicTacToe
   def play
     loop do
       clear_terminal
-
-      puts "Welcome to Tic Tac Toe!"
-      puts "Players take turns entering positions 1-9"
-      puts ""
-
       display_board
       make_move
 
       if winner?
+        clear_terminal
         display_board
         puts "Player #{@current_player} wins!"
         break
       end
 
       if board_full?
+        clear_terminal
         display_board
         puts "It's a draw!"
         break
@@ -46,6 +43,8 @@ class TicTacToe
   end
 
   def display_board
+    puts "Welcome to Tic Tac Toe!"
+    puts "Players take turns entering positions 1-9"
     puts
     puts " #{cell(0)} | #{cell(1)} | #{cell(2)} "
     puts "---+---+---"
