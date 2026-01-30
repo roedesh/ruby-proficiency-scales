@@ -1,0 +1,5 @@
+nl:
+  hello: "Hallo wereld"
+  products:
+    index:
+      title: "Producten"
