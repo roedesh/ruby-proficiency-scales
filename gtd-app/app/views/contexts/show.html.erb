@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @context %>
+
+<div>
+  <%= link_to "Edit this context", edit_context_path(@context) %> |
+  <%= link_to "Back to contexts", contexts_path %>
+
+  <%= button_to "Destroy this context", @context, method: :delete %>
+</div>

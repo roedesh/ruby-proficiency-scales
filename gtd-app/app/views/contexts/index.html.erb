@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Contexts" %>
+
+<h1>Contexts</h1>
+
+<div id="contexts">
+  <% @contexts.each do |context| %>
+    <%= render context %>
+    <p>
+      <%= link_to "Show this context", context %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New context", new_context_path %>

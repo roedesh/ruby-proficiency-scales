@@ -1,0 +1,11 @@
+<% content_for :title, "New context" %>
+
+<h1>New context</h1>
+
+<%= render "form", context: @context %>
+
+<br>
+
+<div>
+  <%= link_to "Back to contexts", contexts_path %>
+</div>

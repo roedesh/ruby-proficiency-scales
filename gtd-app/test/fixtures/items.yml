@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  title: MyString
+  description: MyText
+  item_type: MyString
+  status: MyString
+  context: one
+  project: one
+  due_date: 2026-02-02
+  completed_at: 2026-02-02 11:31:31
+  energy_level: MyString
+  time_required: 1
+
+two:
+  user: two
+  title: MyString
+  description: MyText
+  item_type: MyString
+  status: MyString
+  context: two
+  project: two
+  due_date: 2026-02-02
+  completed_at: 2026-02-02 11:31:31
+  energy_level: MyString
+  time_required: 1
