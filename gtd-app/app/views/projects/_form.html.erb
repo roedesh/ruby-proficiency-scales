@@ -1,8 +1,7 @@
 <%= form_with(model: project) do |form| %>
   <% if project.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
-
+    <div class="alert alert-danger" role="alert">
+      <p><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</p>
       <ul>
         <% project.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -11,32 +10,27 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
+  <div class="mb-3">
+    <%= form.label :name, class: "form-label", style: "display: block" %>
+    <%= form.text_field :name, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="mb-3">
+    <%= form.label :description, class: "form-label", style: "display: block" %>
+    <%= form.textarea :description, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.textarea :description %>
+  <div class="mb-3">
+    <%= form.label :status, class: "form-label", style: "display: block" %>
+    <%= form.select :status, Project::STATUSSES, {}, { :class => 'form-select' } %>
   </div>
 
-  <div>
-    <%= form.label :status, style: "display: block" %>
-    <%= form.text_field :status %>
-  </div>
-
-  <div>
+  <div class="mb-3">
     <%= form.label :completed_at, style: "display: block" %>
-    <%= form.datetime_field :completed_at %>
+    <%= form.datetime_field :completed_at, class: "form-control" %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "Submit", class: "btn btn-primary" %>
   </div>
 <% end %>

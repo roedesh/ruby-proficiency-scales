@@ -1,8 +1,26 @@
-<header class="layout-header">
-    <span class="layout-header-logo">Getting Things Done</span>
-    <nav>
-        <ul>
-            <li><a href="">Logout</a></li>
-        </ul>
-    </nav>
+<header class="container">
+    
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <%= link_to "GTD", root_path, class: "navbar-brand" %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+            <%= active_link_to "Overview", root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+            <%= active_link_to "Context", contexts_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+            <%= active_link_to "Projects", projects_path, class: "nav-link" %>
+        </li>
+    </div>
+  </div>
+</nav>
+
+
 </header>

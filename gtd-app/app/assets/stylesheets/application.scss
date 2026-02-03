@@ -1,0 +1,19 @@
+@use "_bootstrap";
+
+.layout-header {
+  display: flex;
+}
+
+.layout-header nav ul {
+  margin: 0;
+  list-style-type: none;
+}
+
+.layout-header-logo {
+  flex: 1;
+}
+
+
+.projects-grid {
+    margin-top: 20px;
+}

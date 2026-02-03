@@ -21,13 +21,13 @@ ActiveRecord::Schema[8.1].define(version: 2026_02_02_103131) do
 
   create_table "items", force: :cascade do |t|
     t.datetime "completed_at"
-    t.integer "context_id", null: false
+    t.integer "context_id"
     t.datetime "created_at", null: false
     t.text "description"
     t.date "due_date"
     t.string "energy_level"
     t.string "item_type"
-    t.integer "project_id", null: false
+    t.integer "project_id"
     t.string "status"
     t.integer "time_required"
     t.string "title"

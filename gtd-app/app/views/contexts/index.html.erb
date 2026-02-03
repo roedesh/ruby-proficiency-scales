@@ -2,6 +2,13 @@
 
 <% content_for :title, "Contexts" %>
 
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><%= link_to "Overview", root_path %></li>
+    <li class="breadcrumb-item active" aria-current="page">Contexts</li>
+  </ol>
+</nav>
+
 <h1>Contexts</h1>
 
 <div id="contexts">
@@ -13,4 +20,4 @@
   <% end %>
 </div>
 
-<%= link_to "New context", new_context_path %>
+<%= link_to "New context", new_context_path, class: "btn btn-primary" %>
