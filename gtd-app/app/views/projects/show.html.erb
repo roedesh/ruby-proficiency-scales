@@ -1,5 +1,15 @@
 <p style="color: green"><%= notice %></p>
 
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><%= link_to "Overview", root_path %></li>
+    <li class="breadcrumb-item"><%= link_to "Projects", projects_path %></li>
+    <li class="breadcrumb-item active" aria-current="page"><%= @project.name %></li>
+  </ol>
+</nav>
+
+<h1><%= @project.name %></h1>
+
 <%= render @project %>
 
 <div>
