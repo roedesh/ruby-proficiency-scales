@@ -3,6 +3,7 @@ require "test_helper"
 class ContextsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @context = contexts(:one)
+    sign_in_as(users(:one))
   end
 
   test "should get index" do
@@ -17,7 +18,7 @@ class ContextsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create context" do
     assert_difference("Context.count") do
-      post contexts_url, params: { context: { name: @context.name, user_id: @context.user_id } }
+      post contexts_url, params: { context: { name: @context.name } }
     end
 
     assert_redirected_to context_url(Context.last)
@@ -34,7 +35,7 @@ class ContextsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update context" do
-    patch context_url(@context), params: { context: { name: @context.name, user_id: @context.user_id } }
+    patch context_url(@context), params: { context: { name: @context.name } }
     assert_redirected_to context_url(@context)
   end
 

@@ -3,6 +3,7 @@ require "test_helper"
 class ItemsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @item = items(:one)
+    sign_in_as(users(:one))
   end
 
   test "should get index" do
@@ -17,7 +18,7 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create item" do
     assert_difference("Item.count") do
-      post items_url, params: { item: { completed_at: @item.completed_at, context_id: @item.context_id, description: @item.description, due_date: @item.due_date, energy_level: @item.energy_level, item_type: @item.item_type, project_id: @item.project_id, status: @item.status, time_required: @item.time_required, title: @item.title, user_id: @item.user_id } }
+      post items_url, params: { item: { completed_at: @item.completed_at, context_id: @item.context_id, description: @item.description, due_date: @item.due_date, energy_level: @item.energy_level, item_type: @item.item_type, project_id: @item.project_id, status: @item.status, time_required: @item.time_required, title: @item.title } }
     end
 
     assert_redirected_to item_url(Item.last)
@@ -34,7 +35,7 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update item" do
-    patch item_url(@item), params: { item: { completed_at: @item.completed_at, context_id: @item.context_id, description: @item.description, due_date: @item.due_date, energy_level: @item.energy_level, item_type: @item.item_type, project_id: @item.project_id, status: @item.status, time_required: @item.time_required, title: @item.title, user_id: @item.user_id } }
+    patch item_url(@item), params: { item: { completed_at: @item.completed_at, context_id: @item.context_id, description: @item.description, due_date: @item.due_date, energy_level: @item.energy_level, item_type: @item.item_type, project_id: @item.project_id, status: @item.status, time_required: @item.time_required, title: @item.title } }
     assert_redirected_to item_url(@item)
   end
 

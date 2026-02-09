@@ -4,24 +4,24 @@ one:
   user: one
   title: MyString
   description: MyText
-  item_type: MyString
-  status: MyString
+  item_type: action
+  status: inbox
   context: one
   project: one
   due_date: 2026-02-02
   completed_at: 2026-02-02 11:31:31
-  energy_level: MyString
+  energy_level: high
   time_required: 1
 
 two:
   user: two
   title: MyString
   description: MyText
-  item_type: MyString
-  status: MyString
+  item_type: action
+  status: inbox
   context: two
   project: two
   due_date: 2026-02-02
   completed_at: 2026-02-02 11:31:31
-  energy_level: MyString
+  energy_level: high
   time_required: 1

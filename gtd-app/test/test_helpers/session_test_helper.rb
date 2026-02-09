@@ -17,3 +17,7 @@ end
 ActiveSupport.on_load(:action_dispatch_integration_test) do
   include SessionTestHelper
 end
+
+ActiveSupport.on_load(:action_controller_test_case) do
+  include SessionTestHelper
+end
