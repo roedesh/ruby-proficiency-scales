@@ -10,13 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_02_02_103131) do
+ActiveRecord::Schema[8.1].define(version: 2026_02_09_121232) do
   create_table "contexts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.string "name"
     t.datetime "updated_at", null: false
     t.integer "user_id", null: false
     t.index ["user_id"], name: "index_contexts_on_user_id"
+  end
+
+  create_table "item_tags", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.integer "item_id", null: false
+    t.integer "tag_id", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_item_tags_on_item_id"
+    t.index ["tag_id"], name: "index_item_tags_on_tag_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -73,6 +82,8 @@ ActiveRecord::Schema[8.1].define(version: 2026_02_02_103131) do
   end
 
   add_foreign_key "contexts", "users"
+  add_foreign_key "item_tags", "items"
+  add_foreign_key "item_tags", "tags"
   add_foreign_key "items", "contexts"
   add_foreign_key "items", "projects"
   add_foreign_key "items", "users"
