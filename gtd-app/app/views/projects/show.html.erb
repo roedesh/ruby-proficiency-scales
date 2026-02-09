@@ -8,39 +8,7 @@
   </ol>
 </nav>
 
-<h1><%= @project.name %></h1>
-
-<blockquote class="blockquote">
-  <%= @project.description %>
-</blockquote>
-
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title">Items</h5>
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">Title</td>
-          <th scope="col">Description</td>
-          <th scope="col">Status</td>
-          <th scope="col">Completed at</td>
-          <th scope="col">Actions</td>
-        </tr>
-      </thead>
-      <tbody>
-        <% @project.items.each do |item| %>
-          <tr>
-            <td scope="row"><%= item.title %></td>
-            <td><%= item.description.presence || "-" %></td>
-            <td><%= item.status %></td>
-            <td><%= item.completed_at.presence || "-" %></td>
-            <td><%= link_to "Show", item %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-</div>
+<%= render @project %>
 
 <div class="mt-3 mb-3">
   <%= link_to "Edit this project", edit_project_path(@project), class: "btn btn-primary" %>

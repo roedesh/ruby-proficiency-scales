@@ -22,6 +22,7 @@ class ContextsController < ApplicationController
   # POST /contexts or /contexts.json
   def create
     @context = Context.new(context_params)
+    @context.user = Current.user
 
     respond_to do |format|
       if @context.save
@@ -65,6 +66,6 @@ class ContextsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def context_params
-      params.expect(context: [ :user_id, :name ])
+      params.expect(context: [ :name ])
     end
 end

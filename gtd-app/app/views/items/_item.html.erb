@@ -1,13 +1,19 @@
 <div id="<%= dom_id item %>">
-  <div>
-    <strong>User:</strong>
-    <%= item.user_id %>
-  </div>
+  <h1>Item: <%= item.title %></h1>
 
-  <div>
-    <strong>Title:</strong>
-    <%= item.title %>
-  </div>
+  <% if item.project.present? %>
+    <div>
+      <strong>Project:</strong>
+      <%= item.project.name %>
+    </div>
+  <% end %>
+
+  <% if item.context.present? %>
+    <div>
+      <strong>Context:</strong>
+      <%= item.context.name %>
+    </div>
+  <% end %>
 
   <div>
     <strong>Description:</strong>

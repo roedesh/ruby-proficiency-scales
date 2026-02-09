@@ -11,13 +11,19 @@
 
 <h1>Contexts</h1>
 
-<div id="contexts">
+<%= link_to "New context", new_context_path, class: "btn btn-primary" %>
+
+<div class="mt-4">
   <% @contexts.each do |context| %>
-    <%= render context %>
-    <p>
-      <%= link_to "Show this context", context %>
-    </p>
+  <div class="col-4">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%= link_to "@" + context.name, context %></h5>
+        <p class="card-text">Items: <%= context.items.length %></p>
+      </div>
+    </div>
+  </div>
   <% end %>
 </div>
 
-<%= link_to "New context", new_context_path, class: "btn btn-primary" %>
+
