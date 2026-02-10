@@ -2,8 +2,8 @@
 
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><%= link_to "Overview", root_path %></li>
-    <li class="breadcrumb-item"><%= link_to "Items", items_path %></li>
+    <li class="breadcrumb-item"><%= link_to t('breadcrumbs.overview'), root_path %></li>
+    <li class="breadcrumb-item"><%= link_to t('items.index.items'), items_path %></li>
     <li class="breadcrumb-item active" aria-current="page"><%= @item.title %></li>
   </ol>
 </nav>
@@ -11,9 +11,9 @@
 <%= render @item %>
 
 <div class="mt-3 mb-3">
-  <%= link_to "Edit this item", edit_item_path(@item), class: "btn btn-primary" %>
+  <%= link_to t('items.show.edit_this_item'), edit_item_path(@item), class: "btn btn-primary" %>
 </div>
 
 <div>
-  <%= button_to "Delete this item", @item, method: :delete, class: "btn btn-danger" %>
+  <%= button_to t('items.show.delete_this_item'), @item, method: :delete, class: "btn btn-danger" %>
 </div>

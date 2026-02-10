@@ -1,14 +1,14 @@
-<% content_for :title, "Editing project" %>
+<% content_for :title, t('projects.edit.editing_project') %>
 
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><%= link_to "Overview", root_path %></li>
-    <li class="breadcrumb-item"><%= link_to "Projects", projects_path %></li>
+    <li class="breadcrumb-item"><%= link_to t('breadcrumbs.overview'), root_path %></li>
+    <li class="breadcrumb-item"><%= link_to t('projects.index.projects'), projects_path %></li>
     <li class="breadcrumb-item"><%= link_to @project.name, @project %></li>
-    <li class="breadcrumb-item active" aria-current="page">Edit</li>
+    <li class="breadcrumb-item active" aria-current="page"><%= t('projects.edit.edit') %></li>
   </ol>
 </nav>
 
-<h1>Editing project</h1>
+<h1><%= t('projects.edit.editing_project') %></h1>
 
 <%= render "form", project: @project %>

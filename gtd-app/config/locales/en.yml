@@ -28,4 +28,200 @@
 #       enabled: "ON"
 
 en:
-  hello: "Hello world"
+  activerecord:
+    models:
+      project: "Project"
+      context: "Context"
+      tag: "Tag"
+      item: "Item"
+      user: "User"
+    attributes:
+      project:
+        name: "Name"
+        description: "Description"
+        status: "Status"
+        completed_at: "Completed at"
+      context:
+        name: "Name"
+      tag:
+        name: "Name"
+      item:
+        title: "Title"
+        description: "Description"
+        item_type: "Item type"
+        status: "Status"
+        context_id: "Context"
+        project_id: "Project"
+        due_date: "Due date"
+        completed_at: "Completed at"
+        energy_level: "Energy level"
+        time_required: "Time required"
+      user:
+        email_address: "Email address"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+    errors:
+      messages:
+        taken: "has already been taken"
+        blank: "can't be blank"
+        invalid: "is invalid"
+        too_short: "is too short (minimum is %{count} characters)"
+        too_long: "is too long (maximum is %{count} characters)"
+
+  shared:
+    back_to: "Back to %{resource}"
+    no_items_yet: "No items yet"
+    title: "Title"
+    description: "Description"
+    status: "Status"
+    completed_at: "Completed at"
+    actions: "Actions"
+    edit: "Edit"
+    delete: "Delete"
+    show: "Show"
+    submit: "Submit"
+    save: "Save"
+    edit_this: "Edit this %{resource}"
+    delete_this: "Delete this %{resource}"
+    error_count: "%{count} error"
+    error_count_plural: "%{count} errors"
+    prohibited_from_being_saved: "prohibited this %{resource} from being saved:"
+
+  layouts:
+    header:
+      gtd: "GTD"
+      overview: "Overview"
+      contexts: "Contexts"
+      projects: "Projects"
+      items: "Items"
+    application:
+      title: "GTD App"
+
+  homepage:
+    index:
+      home: "Home"
+      new_item: "New item"
+
+  sessions:
+    new:
+      sign_in: "Sign in"
+      email_address: "Email address"
+      password: "Password"
+      forgot_password: "Forgot password?"
+      enter_email: "Enter your email address"
+      enter_password: "Enter your password"
+
+  passwords:
+    new:
+      forgot_your_password: "Forgot your password?"
+      email_reset_instructions: "Email reset instructions"
+    edit:
+      update_your_password: "Update your password"
+      enter_new_password: "Enter new password"
+      repeat_new_password: "Repeat new password"
+
+  projects:
+    index:
+      projects: "Projects"
+      new_project: "New project"
+      items: "Items"
+    new:
+      new_project: "New project"
+    edit:
+      editing_project: "Editing project"
+      edit: "Edit"
+    show:
+      edit_this_project: "Edit this project"
+      delete_this_project: "Delete this project"
+    form:
+      errors_prohibited: "%{count} error prohibited this project from being saved:"
+      errors_prohibited_plural: "%{count} errors prohibited this project from being saved:"
+
+  contexts:
+    index:
+      contexts: "Contexts"
+      new_context: "New context"
+      items: "Items"
+    new:
+      new_context: "New context"
+      back_to_contexts: "Back to contexts"
+    edit:
+      editing_context: "Editing context"
+      edit: "Edit"
+    show:
+      edit_this_context: "Edit this context"
+      delete_this_context: "Delete this context"
+    form:
+      errors_prohibited: "%{count} error prohibited this context from being saved:"
+      errors_prohibited_plural: "%{count} errors prohibited this context from being saved:"
+
+  tags:
+    index:
+      tags: "Tags"
+      new_tag: "New tag"
+    new:
+      new_tag: "New tag"
+    edit:
+      editing_tag: "Editing tag"
+      edit: "Edit"
+    show:
+      edit_this_tag: "Edit this tag"
+      delete_this_tag: "Delete this tag"
+    form:
+      errors_prohibited: "%{count} error prohibited this tag from being saved:"
+      errors_prohibited_plural: "%{count} errors prohibited this tag from being saved:"
+
+  items:
+    index:
+      items: "Items"
+      new_item: "New item"
+      title: "Title"
+      project: "Project"
+      context: "Context"
+      status: "Status"
+      completed_at: "Completed at"
+      no_items_yet: "No items yet"
+    new:
+      new_item: "New item"
+    edit:
+      editing_item: "Editing item"
+      edit: "Edit"
+    show:
+      edit_this_item: "Edit this item"
+      delete_this_item: "Delete this item"
+    form:
+      select_a_context: "Select a context"
+      select_a_project: "Select a project"
+      errors_prohibited: "%{count} error prohibited this item from being saved:"
+      errors_prohibited_plural: "%{count} errors prohibited this item from being saved:"
+    item:
+      item: "Item:"
+      project: "Project:"
+      context: "Context:"
+      description: "Description:"
+      item_type: "Item type:"
+      status: "Status:"
+      due_date: "Due date:"
+      completed_at: "Completed at:"
+      energy_level: "Energy level:"
+      time_required: "Time required:"
+
+  breadcrumbs:
+    overview: "Overview"
+    projects: "Projects"
+    contexts: "Contexts"
+    items: "Items"
+    tags: "Tags"
+    new: "New %{resource}"
+    edit: "Edit"
+
+  activemodel:
+    models:
+      project: "Project"
+      context: "Context"
+      tag: "Tag"
+      item: "Item"
+    errors:
+      messages:
+        blank: "can't be blank"
+        invalid: "is invalid"

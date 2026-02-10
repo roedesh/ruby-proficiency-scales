@@ -1,16 +1,26 @@
 <p style="color: green"><%= notice %></p>
 
-<% content_for :title, "Tags" %>
+<% content_for :title, t('tags.index.tags') %>
 
-<h1>Tags</h1>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><%= link_to t('breadcrumbs.overview'), root_path %></li>
+    <li class="breadcrumb-item active" aria-current="page"><%= t('tags.index.tags') %></li>
+  </ol>
+</nav>
 
-<div id="tags">
+<h1><%= t('tags.index.tags') %></h1>
+
+<%= link_to t('tags.index.new_tag'), new_tag_path, class: "btn btn-primary" %>
+
+<div class="mt-4">
   <% @tags.each do |tag| %>
-    <%= render tag %>
-    <p>
-      <%= link_to "Show this tag", tag %>
-    </p>
+  <div class="col-4">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%= link_to "#" + tag.name, tag %></h5>
+      </div>
+    </div>
+  </div>
   <% end %>
 </div>
-
-<%= link_to "New tag", new_tag_path %>

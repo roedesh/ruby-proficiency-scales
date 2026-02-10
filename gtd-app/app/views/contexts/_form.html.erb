@@ -1,7 +1,7 @@
 <%= form_with(model: context) do |form| %>
   <% if context.errors.any? %>
     <div class="alert alert-danger" role="alert">
-      <h2><%= pluralize(context.errors.count, "error") %> prohibited this context from being saved:</h2>
+      <h2><%= t('contexts.form.errors_prohibited', count: context.errors.count) %></h2>
 
       <ul>
         <% context.errors.each do |error| %>
@@ -17,6 +17,6 @@
   </div>
 
   <div>
-    <%= form.submit "Submit", class: "btn btn-primary" %>
+    <%= form.submit t('shared.submit'), class: "btn btn-primary" %>
   </div>
 <% end %>

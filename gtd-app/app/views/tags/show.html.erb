@@ -1,10 +1,19 @@
 <p style="color: green"><%= notice %></p>
 
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><%= link_to t('breadcrumbs.overview'), root_path %></li>
+    <li class="breadcrumb-item"><%= link_to t('tags.index.tags'), tags_path %></li>
+    <li class="breadcrumb-item active" aria-current="page">#<%= @tag.name %></li>
+  </ol>
+</nav>
+
 <%= render @tag %>
 
-<div>
-  <%= link_to "Edit this tag", edit_tag_path(@tag) %> |
-  <%= link_to "Back to tags", tags_path %>
+<div class="mt-3 mb-3">
+  <%= link_to t('tags.show.edit_this_tag'), edit_tag_path(@tag), class: "btn btn-primary" %>
+</div>
 
-  <%= button_to "Destroy this tag", @tag, method: :delete %>
+<div>
+  <%= button_to t('tags.show.delete_this_tag'), @tag, method: :delete, class: "btn btn-danger" %>
 </div>

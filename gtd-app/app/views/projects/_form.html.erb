@@ -1,7 +1,7 @@
 <%= form_with(model: project) do |form| %>
   <% if project.errors.any? %>
     <div class="alert alert-danger" role="alert">
-      <p><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</p>
+      <p><%= t('projects.form.errors_prohibited', count: project.errors.count) %></p>
       <ul>
         <% project.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -31,6 +31,6 @@
   </div>
 
   <div>
-    <%= form.submit "Submit", class: "btn btn-primary" %>
+    <%= form.submit t('shared.submit'), class: "btn btn-primary" %>
   </div>
 <% end %>

@@ -2,8 +2,8 @@
 
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><%= link_to "Overview", root_path %></li>
-    <li class="breadcrumb-item"><%= link_to "Contexts", contexts_path %></li>
+    <li class="breadcrumb-item"><%= link_to t('breadcrumbs.overview'), root_path %></li>
+    <li class="breadcrumb-item"><%= link_to t('contexts.index.contexts'), contexts_path %></li>
     <li class="breadcrumb-item active" aria-current="page">@<%= @context.name %></li>
   </ol>
 </nav>
@@ -11,9 +11,9 @@
 <%= render @context %>
 
 <div class="mt-3 mb-3">
-  <%= link_to "Edit this context", edit_context_path(@context), class: "btn btn-primary" %>
+  <%= link_to t('contexts.show.edit_this_context'), edit_context_path(@context), class: "btn btn-primary" %>
 </div>
 
 <div>
-  <%= button_to "Delete this context", @context, method: :delete, class: "btn btn-danger" %>
+  <%= button_to t('contexts.show.delete_this_context'), @context, method: :delete, class: "btn btn-danger" %>
 </div>

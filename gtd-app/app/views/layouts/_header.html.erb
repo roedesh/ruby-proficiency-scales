@@ -3,27 +3,27 @@
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <%= link_to "GTD", root_path, class: "navbar-brand" %>
+    <%= link_to t('layouts.header.gtd'), root_path, class: "navbar-brand" %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-            <%= active_link_to "Overview", root_path, class: "nav-link" %>
+            <%= active_link_to t('layouts.header.overview'), root_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-            <%= active_link_to "Contexts", contexts_path, class: "nav-link" %>
+            <%= active_link_to t('layouts.header.contexts'), contexts_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-            <%= active_link_to "Projects", projects_path, class: "nav-link" %>
+            <%= active_link_to t('layouts.header.projects'), projects_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-            <%= active_link_to "Items", items_path, class: "nav-link" %>
+            <%= active_link_to t('layouts.header.items'), items_path, class: "nav-link" %>
         </li>
     </div>
   </div>
 </nav>
-
-
+ 
+ 
 </header>

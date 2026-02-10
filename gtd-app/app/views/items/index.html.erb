@@ -1,23 +1,23 @@
 <p style="color: green"><%= notice %></p>
 
-<% content_for :title, "Items" %>
+<% content_for :title, t('items.index.items') %>
 
-<h1>Items</h1>
+<h1><%= t('items.index.items') %></h1>
 
-<%= link_to "New item", new_item_path, class: "btn btn-primary" %>
+<%= link_to t('items.index.new_item'), new_item_path, class: "btn btn-primary" %>
 
 <div class="card mt-4">
   <div class="card-body">
-    <h5 class="card-title">Items</h5>
+    <h5 class="card-title"><%= t('items.index.items') %></h5>
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">Title</td>
-          <th scope="col">Project</td>
-          <th scope="col">Context</td>
-          <th scope="col">Status</td>
-          <th scope="col">Completed at</td>
-          <th scope="col">Actions</td>
+          <th scope="col"><%= t('items.index.title') %></td>
+          <th scope="col"><%= t('items.index.project') %></td>
+          <th scope="col"><%= t('items.index.context') %></td>
+          <th scope="col"><%= t('items.index.status') %></td>
+          <th scope="col"><%= t('items.index.completed_at') %></td>
+          <th scope="col"><%= t('shared.actions') %></td>
         </tr>
       </thead>
       <tbody>
@@ -29,12 +29,12 @@
               <td><% if item.context.presence %><%= link_to item.context.name, item.context %><%else %>-<% end %></td>
               <td><%= item.status %></td>
               <td><%= item.completed_at.presence || "-" %></td>
-              <td><%= link_to "Show", item %></td>
+              <td><%= link_to t('shared.show'), item %></td>
             </tr>
           <% end %>
         <% else %>
           <tr>
-            <td colspan="5">No items yet</td>
+            <td colspan="5"><%= t('items.index.no_items_yet') %></td>
           </tr>
         <% end %>
       </tbody>

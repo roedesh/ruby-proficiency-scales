@@ -7,15 +7,15 @@
 
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title">Items</h5>
+      <h5 class="card-title"><%= t('items.index.items') %></h5>
       <table class="table">
         <thead>
           <tr>
-            <th scope="col">Title</td>
-            <th scope="col">Description</td>
-            <th scope="col">Status</td>
-            <th scope="col">Completed at</td>
-            <th scope="col">Actions</td>
+            <th scope="col"><%= t('items.index.title') %></td>
+            <th scope="col"><%= t('shared.description') %></td>
+            <th scope="col"><%= t('shared.status') %></td>
+            <th scope="col"><%= t('shared.completed_at') %></td>
+            <th scope="col"><%= t('shared.actions') %></td>
           </tr>
         </thead>
         <tbody>
@@ -26,12 +26,12 @@
                 <td><%= item.description.presence || "-" %></td>
                 <td><%= item.status %></td>
                 <td><%= item.completed_at.presence || "-" %></td>
-                <td><%= link_to "Show", item %></td>
+                <td><%= link_to t('shared.show'), item %></td>
               </tr>
             <% end %>
           <% else %>
             <tr>
-              <td colspan="5">No items yet</td>
+              <td colspan="5"><%= t('shared.no_items_yet') %></td>
             </tr>
           <% end %>
         </tbody>

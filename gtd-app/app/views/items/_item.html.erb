@@ -1,62 +1,62 @@
 <div id="<%= dom_id item %>">
-  <h1>Item: <%= item.title %></h1>
+  <h1><%= t('items.item.item') %> <%= item.title %></h1>
 
   <% if item.project.present? %>
     <div>
-      <strong>Project:</strong>
+      <strong><%= t('items.item.project') %></strong>
       <%= item.project.name %>
     </div>
   <% end %>
 
   <% if item.context.present? %>
     <div>
-      <strong>Context:</strong>
+      <strong><%= t('items.item.context') %></strong>
       <%= item.context.name %>
     </div>
   <% end %>
 
   <div>
-    <strong>Description:</strong>
+    <strong><%= t('items.item.description') %></strong>
     <%= item.description %>
   </div>
 
   <div>
-    <strong>Item type:</strong>
+    <strong><%= t('items.item.item_type') %></strong>
     <%= item.item_type %>
   </div>
 
   <div>
-    <strong>Status:</strong>
+    <strong><%= t('items.item.status') %></strong>
     <%= item.status %>
   </div>
 
   <div>
-    <strong>Context:</strong>
+    <strong><%= t('items.item.context') %></strong>
     <%= item.context_id %>
   </div>
 
   <div>
-    <strong>Project:</strong>
+    <strong><%= t('items.item.project') %></strong>
     <%= item.project_id %>
   </div>
 
   <div>
-    <strong>Due date:</strong>
+    <strong><%= t('items.item.due_date') %></strong>
     <%= item.due_date %>
   </div>
 
   <div>
-    <strong>Completed at:</strong>
+    <strong><%= t('items.item.completed_at') %></strong>
     <%= item.completed_at %>
   </div>
 
   <div>
-    <strong>Energy level:</strong>
+    <strong><%= t('items.item.energy_level') %></strong>
     <%= item.energy_level %>
   </div>
 
   <div>
-    <strong>Time required:</strong>
+    <strong><%= t('items.item.time_required') %></strong>
     <%= item.time_required %>
   </div>
 

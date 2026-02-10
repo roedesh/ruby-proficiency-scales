@@ -1,11 +1,15 @@
-<% content_for :title, "New tag" %>
+<% content_for :title, t('tags.new.new_tag') %>
 
-<h1>New tag</h1>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><%= link_to t('breadcrumbs.overview'), root_path %></li>
+    <li class="breadcrumb-item"><%= link_to t('tags.index.tags'), tags_path %></li>
+    <li class="breadcrumb-item active" aria-current="page"><%= t('tags.new.new_tag') %></li>
+  </ol>
+</nav>
+
+<h1><%= t('tags.new.new_tag') %></h1>
 
 <%= render "form", tag: @tag %>
 
 <br>
-
-<div>
-  <%= link_to "Back to tags", tags_path %>
-</div>

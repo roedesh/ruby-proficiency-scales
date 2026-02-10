@@ -1,15 +1,15 @@
-<% content_for :title, "Projects" %>
+<% content_for :title, t('projects.index.projects') %>
 
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><%= link_to "Overview", root_path %></li>
-    <li class="breadcrumb-item active" aria-current="page">Projects</li>
+    <li class="breadcrumb-item"><%= link_to t('breadcrumbs.overview'), root_path %></li>
+    <li class="breadcrumb-item active" aria-current="page"><%= t('projects.index.projects') %></li>
   </ol>
 </nav>
 
-<h1>Projects</h1>
+<h1><%= t('projects.index.projects') %></h1>
 
-<%= link_to "New project", new_project_path, class: "btn btn-primary" %>
+<%= link_to t('projects.index.new_project'), new_project_path, class: "btn btn-primary" %>
 
 <div class="mt-4">
   <% @projects.each do |project| %>
@@ -18,8 +18,8 @@
       <div class="card-body">
         <h5 class="card-title"><%= link_to project.name, project %></h5>
         <p class="card-text"><%= project.description %></p>
-        <p class="card-text">Status: <%= project.status %></p>
-        <p class="card-text">Items: <%= project.items.length %></p>
+        <p class="card-text"><%= t('projects.index.items') %>: <%= project.items.length %></p>
+        <p class="card-text"><%= t('activerecord.attributes.project.status') %>: <%= project.status %></p>
       </div>
     </div>
   </div>

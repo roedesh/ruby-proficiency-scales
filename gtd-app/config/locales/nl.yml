@@ -1,0 +1,198 @@
+nl:
+  activerecord:
+    models:
+      project: "Project"
+      context: "Context"
+      tag: "Label"
+      item: "Item"
+      user: "Gebruiker"
+    attributes:
+      project:
+        name: "Naam"
+        description: "Beschrijving"
+        status: "Status"
+        completed_at: "Voltooid op"
+      context:
+        name: "Naam"
+      tag:
+        name: "Naam"
+      item:
+        title: "Titel"
+        description: "Beschrijving"
+        item_type: "Itemtype"
+        status: "Status"
+        context_id: "Context"
+        project_id: "Project"
+        due_date: "Vervaldatum"
+        completed_at: "Voltooid op"
+        energy_level: "Energieniveau"
+        time_required: "Benodigde tijd"
+      user:
+        email_address: "E-mailadres"
+        password: "Wachtwoord"
+        password_confirmation: "Wachtwoordbevestiging"
+    errors:
+      messages:
+        taken: "is al in gebruik"
+        blank: "kan niet leeg zijn"
+        invalid: "is ongeldig"
+        too_short: "is te kort (minimaal %{count} tekens)"
+        too_long: "is te lang (maximaal %{count} tekens)"
+
+  shared:
+    back_to: "Terug naar %{resource}"
+    no_items_yet: "Nog geen items"
+    title: "Titel"
+    description: "Beschrijving"
+    status: "Status"
+    completed_at: "Voltooid op"
+    actions: "Acties"
+    edit: "Bewerken"
+    delete: "Verwijderen"
+    show: "Bekijken"
+    submit: "Verzenden"
+    save: "Opslaan"
+    edit_this: "Deze %{resource} bewerken"
+    delete_this: "Deze %{resource} verwijderen"
+    error_count: "%{count} fout"
+    error_count_plural: "%{count} fouten"
+    prohibited_from_being_saved: "hebben voorkomen dat deze %{resource} werd opgeslagen:"
+
+  layouts:
+    header:
+      gtd: "GTD"
+      overview: "Overzicht"
+      contexts: "Contexten"
+      projects: "Projecten"
+      items: "Items"
+    application:
+      title: "GTD App"
+
+  homepage:
+    index:
+      home: "Start"
+      new_item: "Nieuw item"
+
+  sessions:
+    new:
+      sign_in: "Inloggen"
+      email_address: "E-mailadres"
+      password: "Wachtwoord"
+      forgot_password: "Wachtwoord vergeten?"
+      enter_email: "Voer uw e-mailadres in"
+      enter_password: "Voer uw wachtwoord in"
+
+  passwords:
+    new:
+      forgot_your_password: "Wachtwoord vergeten?"
+      email_reset_instructions: "Verstuur instructies om wachtwoord opnieuw in te stellen"
+    edit:
+      update_your_password: "Uw wachtwoord bijwerken"
+      enter_new_password: "Voer nieuw wachtwoord in"
+      repeat_new_password: "Herhaal nieuw wachtwoord"
+
+  projects:
+    index:
+      projects: "Projecten"
+      new_project: "Nieuw project"
+      items: "Items"
+    new:
+      new_project: "Nieuw project"
+    edit:
+      editing_project: "Project bewerken"
+      edit: "Bewerken"
+    show:
+      edit_this_project: "Dit project bewerken"
+      delete_this_project: "Dit project verwijderen"
+    form:
+      errors_prohibited: "%{count} fout heeft voorkomen dat dit project werd opgeslagen:"
+      errors_prohibited_plural: "%{count} fouten hebben voorkomen dat dit project werd opgeslagen:"
+
+  contexts:
+    index:
+      contexts: "Contexten"
+      new_context: "Nieuwe context"
+      items: "Items"
+    new:
+      new_context: "Nieuwe context"
+      back_to_contexts: "Terug naar contexten"
+    edit:
+      editing_context: "Context bewerken"
+      edit: "Bewerken"
+    show:
+      edit_this_context: "Deze context bewerken"
+      delete_this_context: "Deze context verwijderen"
+    form:
+      errors_prohibited: "%{count} fout heeft voorkomen dat deze context werd opgeslagen:"
+      errors_prohibited_plural: "%{count} fouten hebben voorkomen dat deze context werd opgeslagen:"
+
+  tags:
+    index:
+      tags: "Labels"
+      new_tag: "Nieuw label"
+    new:
+      new_tag: "Nieuw label"
+    edit:
+      editing_tag: "Label bewerken"
+      edit: "Bewerken"
+    show:
+      edit_this_tag: "Dit label bewerken"
+      delete_this_tag: "Dit label verwijderen"
+    form:
+      errors_prohibited: "%{count} fout heeft voorkomen dat dit label werd opgeslagen:"
+      errors_prohibited_plural: "%{count} fouten hebben voorkomen dat dit label werd opgeslagen:"
+
+  items:
+    index:
+      items: "Items"
+      new_item: "Nieuw item"
+      title: "Titel"
+      project: "Project"
+      context: "Context"
+      status: "Status"
+      completed_at: "Voltooid op"
+      no_items_yet: "Nog geen items"
+    new:
+      new_item: "Nieuw item"
+    edit:
+      editing_item: "Item bewerken"
+      edit: "Bewerken"
+    show:
+      edit_this_item: "Dit item bewerken"
+      delete_this_item: "Dit item verwijderen"
+    form:
+      select_a_context: "Selecteer een context"
+      select_a_project: "Selecteer een project"
+      errors_prohibited: "%{count} fout heeft voorkomen dat dit item werd opgeslagen:"
+      errors_prohibited_plural: "%{count} fouten hebben voorkomen dat dit item werd opgeslagen:"
+    item:
+      item: "Item:"
+      project: "Project:"
+      context: "Context:"
+      description: "Beschrijving:"
+      item_type: "Itemtype:"
+      status: "Status:"
+      due_date: "Vervaldatum:"
+      completed_at: "Voltooid op:"
+      energy_level: "Energieniveau:"
+      time_required: "Benodigde tijd:"
+
+  breadcrumbs:
+    overview: "Overzicht"
+    projects: "Projecten"
+    contexts: "Contexten"
+    items: "Items"
+    tags: "Labels"
+    new: "Nieuw %{resource}"
+    edit: "Bewerken"
+
+  activemodel:
+    models:
+      project: "Project"
+      context: "Context"
+      tag: "Label"
+      item: "Item"
+    errors:
+      messages:
+        blank: "kan niet leeg zijn"
+        invalid: "is ongeldig"

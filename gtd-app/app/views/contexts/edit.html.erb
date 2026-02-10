@@ -1,14 +1,14 @@
-<% content_for :title, "Editing context" %>
+<% content_for :title, t('contexts.edit.editing_context') %>
 
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><%= link_to "Overview", root_path %></li>
-    <li class="breadcrumb-item"><%= link_to "Contexts", contexts_path %></li>
+    <li class="breadcrumb-item"><%= link_to t('breadcrumbs.overview'), root_path %></li>
+    <li class="breadcrumb-item"><%= link_to t('contexts.index.contexts'), contexts_path %></li>
     <li class="breadcrumb-item"><%= link_to "@" + @context.name, @context %></li>
-    <li class="breadcrumb-item active" aria-current="page">Edit</li>
+    <li class="breadcrumb-item active" aria-current="page"><%= t('contexts.edit.edit') %></li>
   </ol>
 </nav>
 
-<h1>Editing context</h1>
+<h1><%= t('contexts.edit.editing_context') %></h1>
 
 <%= render "form", context: @context %>
