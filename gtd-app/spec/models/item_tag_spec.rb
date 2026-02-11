@@ -24,6 +24,7 @@ RSpec.describe ItemTag, type: :model do
     it 'allows item to have multiple tags' do
       item = Item.create!(
         user: users(:one),
+        title: 'Test',
         item_type: 'action',
         status: 'inbox',
         energy_level: 'high'

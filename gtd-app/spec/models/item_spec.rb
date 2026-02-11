@@ -28,11 +28,36 @@ RSpec.describe Item, type: :model do
   end
 
   describe 'validations' do
+    describe 'title' do
+      it 'requires title' do
+        item = Item.new(
+          user: users(:one),
+          item_type: 'action',
+          status: 'inbox',
+          energy_level: 'high'
+        )
+        expect(item).not_to be_valid
+        expect(item.errors[:title]).to include("can't be blank")
+      end
+
+      it 'is valid with title' do
+        item = Item.new(
+          user: users(:one),
+          title: 'Test item',
+          item_type: 'action',
+          status: 'inbox',
+          energy_level: 'high'
+        )
+        expect(item).to be_valid
+      end
+    end
+
     describe 'item_type' do
       it 'accepts valid item types' do
         Item::ITEM_TYPES.each do |type|
           item = Item.new(
             user: users(:one),
+            title: 'Test item',
             item_type: type,
             status: 'inbox',
             energy_level: 'high'
@@ -44,6 +69,7 @@ RSpec.describe Item, type: :model do
       it 'rejects invalid item types' do
         item = Item.new(
           user: users(:one),
+          title: 'Test item',
           item_type: 'invalid_type',
           status: 'inbox',
           energy_level: 'high'
@@ -58,6 +84,7 @@ RSpec.describe Item, type: :model do
         Item::STATUSSES.each do |status|
           item = Item.new(
             user: users(:one),
+            title: 'Test item',
             item_type: 'action',
             status: status,
             energy_level: 'high'
@@ -69,6 +96,7 @@ RSpec.describe Item, type: :model do
       it 'rejects invalid statuses' do
         item = Item.new(
           user: users(:one),
+          title: 'Test item',
           item_type: 'action',
           status: 'invalid_status',
           energy_level: 'high'
@@ -83,6 +111,7 @@ RSpec.describe Item, type: :model do
         Item::ENERGY_LEVELS.each do |level|
           item = Item.new(
             user: users(:one),
+            title: 'Test item',
             item_type: 'action',
             status: 'inbox',
             energy_level: level
@@ -94,6 +123,7 @@ RSpec.describe Item, type: :model do
       it 'rejects invalid energy levels' do
         item = Item.new(
           user: users(:one),
+          title: 'Test item',
           item_type: 'action',
           status: 'inbox',
           energy_level: 'invalid_level'
@@ -122,6 +152,7 @@ RSpec.describe Item, type: :model do
     it 'destroys associated item_tags when item is destroyed' do
       item = Item.create!(
         user: users(:one),
+        title: 'Test item',
         item_type: 'action',
         status: 'inbox',
         energy_level: 'high'

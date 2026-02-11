@@ -9,6 +9,7 @@ class Item < ApplicationRecord
   has_many :item_tags, dependent: :destroy
   has_many :tags, through: :item_tags
 
+  validates :title, presence: true
   validates :item_type, inclusion: { in: ITEM_TYPES }
   validates :status, inclusion: { in: STATUSSES }
   validates :energy_level, inclusion: { in: ENERGY_LEVELS }

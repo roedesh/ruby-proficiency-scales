@@ -11,6 +11,19 @@ RSpec.describe Context, type: :model do
     end
   end
 
+  describe 'validations' do
+    it 'requires name' do
+      context = Context.new(user: users(:one))
+      expect(context).not_to be_valid
+      expect(context.errors[:name]).to include("can't be blank")
+    end
+
+    it 'is valid with name' do
+      context = Context.new(user: users(:one), name: 'Home')
+      expect(context).to be_valid
+    end
+  end
+
   describe 'dependent nullify' do
     let(:context) { contexts(:one) }
 
@@ -18,6 +31,7 @@ RSpec.describe Context, type: :model do
       item = Item.create!(
         user: context.user,
         context: context,
+        title: 'Test item',
         item_type: 'action',
         status: 'inbox',
         energy_level: 'high'
@@ -30,6 +44,7 @@ RSpec.describe Context, type: :model do
       Item.create!(
         user: context.user,
         context: context,
+        title: 'Test item',
         item_type: 'action',
         status: 'inbox',
         energy_level: 'high'

@@ -12,11 +12,25 @@ RSpec.describe Project, type: :model do
   end
 
   describe 'validations' do
+    describe 'name' do
+      it 'requires name' do
+        project = Project.new(user: users(:one), status: 'active')
+        expect(project).not_to be_valid
+        expect(project.errors[:name]).to include("can't be blank")
+      end
+
+      it 'is valid with name' do
+        project = Project.new(user: users(:one), name: 'My Project', status: 'active')
+        expect(project).to be_valid
+      end
+    end
+
     describe 'status' do
       it 'accepts valid statuses' do
         Project::STATUSSES.each do |status|
           project = Project.new(
             user: users(:one),
+            name: 'My Project',
             status: status
           )
           expect(project).to be_valid
@@ -26,6 +40,7 @@ RSpec.describe Project, type: :model do
       it 'rejects invalid statuses' do
         project = Project.new(
           user: users(:one),
+          name: 'My Project',
           status: 'invalid_status'
         )
         expect(project).not_to be_valid
@@ -47,6 +62,7 @@ RSpec.describe Project, type: :model do
       item = Item.create!(
         user: project.user,
         project: project,
+        title: 'Test item',
         item_type: 'action',
         status: 'inbox',
         energy_level: 'high'
@@ -59,6 +75,7 @@ RSpec.describe Project, type: :model do
       Item.create!(
         user: project.user,
         project: project,
+        title: 'Test item',
         item_type: 'action',
         status: 'inbox',
         energy_level: 'high'
