@@ -56,7 +56,7 @@ RSpec.describe Project, type: :model do
     end
 
     it 'does not destroy items when project is destroyed' do
-      item = Item.create!(
+      Item.create!(
         user: project.user,
         project: project,
         item_type: 'action',

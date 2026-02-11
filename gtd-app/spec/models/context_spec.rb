@@ -27,7 +27,7 @@ RSpec.describe Context, type: :model do
     end
 
     it 'does not destroy items when context is destroyed' do
-      item = Item.create!(
+      Item.create!(
         user: context.user,
         context: context,
         item_type: 'action',
